@@ -2,15 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 import{ FoodService, Food } from '../shared';
 
-import dataSample from './menu.json';
 
 @Component({
   selector: 'app-list-food',
   templateUrl: './list-food.component.html',
   styleUrls: ['./list-food.component.scss']
 })
-export class ListFoodComponent  {
+export class ListFoodComponent implements OnInit {
 
-  foods: any = dataSample;
+  foods: Array<any>;
 
+  constructor(private foodService: FoodService) {}
+
+  ngOnInit() {
+    this.foods = this.foodService.getAll();
+  }
 }

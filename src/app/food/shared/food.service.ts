@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-
-
+import dataSample from './menu.json';
 
 
 @Injectable({
@@ -11,10 +10,10 @@ import { Injectable } from '@angular/core';
 })
 export class FoodService {
 
-/*  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  getAll(): Observable<any> {
-    return this.http.get('http://localhost:4200/assets/menu.json');  
+  getAll(): Array<any> {
+    return dataSample;  
   }
-*/  
+  
 }
