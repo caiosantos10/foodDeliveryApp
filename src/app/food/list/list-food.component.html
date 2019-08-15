@@ -1,13 +1,14 @@
 <div class="container list-group">
 
-  <div>
+  <div *ngFor="let food of foods">
     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">Food Name</h5>
+        <h5 class="mb-1">{{ food.title }}</h5>
         <button type="button" class="btn btn-danger">Add to bag </button>
       </div>
-      <p class="mb-1">Price: $56</p>
-      <small>Cuisine: salad</small>
+      <p class="mb-1">Price: $ {{ food.price }}</p>
+      <small>Cuisine: {{ food.cuisine }} </small>
     </a>
   </div> 
 </div>
+

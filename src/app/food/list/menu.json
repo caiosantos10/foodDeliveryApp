@@ -1,5 +1,4 @@
-{
-	"food": [
+[
 		{
 			"id": "49642c9a-1155-46c0-9ef1-a8e4a6a08d41",
 			"title": "Buffalo Chicken Salad",
@@ -150,5 +149,4 @@
 			"price": 11.95,
 			"cuisine": "chinese"
 		}
-	]
-}
+]
