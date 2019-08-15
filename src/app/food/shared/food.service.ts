@@ -3,8 +3,6 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 
 
-import { Food } from './food.model';
-
 @Injectable({
   providedIn: 'root'
 })
