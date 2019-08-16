@@ -17,9 +17,14 @@ export class FoodService {
   }
 
   addToBag(food: Food): void {
-    const bag = JSON.parse(localStorage['bag']);
+    const bag = this.verififyBag();
     bag.push(food);
     localStorage['bag'] = JSON.stringify(bag);
+  }
+
+  verififyBag(): Food[] {
+    const bag = localStorage['bag'];
+    return bag ? JSON.parse(bag) : [];
   }
 
   

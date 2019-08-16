@@ -1,40 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container collapse navbar-collapse font-weight-bold" id="navbarTogglerDemo01">
+    <a [routerLink]="['/bag/list']" class="navbar-brand">My Bag</a>
+
+  </div>
 </nav>
 
-<div class="container table-responsive">
-    <table class="table">
-
-        <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Price</th>
-                <th scope="col">Cuisine</th>
-                <th scope="col">Amount</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<div class="container list-group">
+    <div *ngFor="let food of foods">
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ food.title }}</h5>
+            <button type="button" class="btn btn-danger">Remove</button>
+        </div>
+        <p class="mb-1">Price: $ {{ food.price }}</p>
+        <small>Cuisine: {{ food.cuisine }}</small>
+        </a>
+    </div>
+  </div>
