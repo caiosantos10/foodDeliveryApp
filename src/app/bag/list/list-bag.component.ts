@@ -24,4 +24,9 @@ export class ListBagComponent implements OnInit {
     return this.bagService.getAll();
   }
 
+  updateValue(e, food:Food){
+    food.amount = e.target.value;
+    console.log(e.target.value);
+  }
+
 }
