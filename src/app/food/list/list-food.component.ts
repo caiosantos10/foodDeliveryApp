@@ -27,6 +27,10 @@ export class ListFoodComponent implements OnInit {
     //this.getAllPizzas();
   }
 
+  addToBag(food: Food): void {
+    this.foodService.addToBag(food);
+  }
+
   getAll(): void {
     this.foods = [];
     this.foods = this.foodService.getAll();

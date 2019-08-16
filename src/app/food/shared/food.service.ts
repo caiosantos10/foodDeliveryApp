@@ -16,5 +16,11 @@ export class FoodService {
     return dataSample;  
   }
 
+  addToBag(food: Food): void {
+    const bag = JSON.parse(localStorage['bag']);
+    bag.push(food);
+    localStorage['bag'] = JSON.stringify(bag);
+  }
+
   
 }
