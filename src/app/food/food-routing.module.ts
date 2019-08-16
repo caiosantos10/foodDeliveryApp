@@ -10,5 +10,5 @@ export const FoodRoutes: Routes = [
     {
         path: 'food/list',
         component: ListFoodComponent
-    }
+    },
 ];

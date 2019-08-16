@@ -18,6 +18,7 @@ import { ListFoodComponent } from './list';
     RouterModule,
     FormsModule,
     FontAwesomeModule
+    
   ],
   providers: [
     FoodService

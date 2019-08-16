@@ -18,11 +18,71 @@ export class ListFoodComponent implements OnInit {
   chinese = faDotCircle;
   all = faBars;
 
-  foods: Array<any>;
+  foods: Food[];
 
   constructor(private foodService: FoodService) {}
 
   ngOnInit() {
+    this.getAll();
+    //this.getAllPizzas();
+  }
+
+  getAll(): void {
+    this.foods = [];
     this.foods = this.foodService.getAll();
+  }
+
+  getAllPizza(): void {
+    this.foods = [];
+    this.foodService.getAll().forEach(element => {
+      if(element.cuisine == 'pizza'){
+        this.foods.push(element);
+      }
+    });
+  }
+
+  getAllCake(): void {
+    this.foods = [];
+    this.foodService.getAll().forEach(element => {
+      if(element.cuisine == 'cake'){
+        this.foods.push(element);
+      }
+    });
+  }
+
+  getAllBurgers(): void {
+    this.foods = [];
+    this.foodService.getAll().forEach(element => {
+      if(element.cuisine == 'burgers'){
+        this.foods.push(element);
+      }
+    });
+  }
+
+  getAllBeverage(): void {
+    this.foods = [];
+    this.foodService.getAll().forEach(element => {
+      if(element.cuisine == 'beverage'){
+        this.foods.push(element);
+      }
+    });
+  }
+
+  getAllSalad(): void {
+    this.foods = [];
+    this.foodService.getAll().forEach(element => {
+      if(element.cuisine == 'salad'){
+        this.foods.push(element);
+      }
+    });
+  }
+
+  getAllChinese(): void {
+    this.foods = [];
+    this.foodService.getAll().forEach(element => {
+      if(element.cuisine == 'chinese'){
+        this.foods.push(element);
+      }
+    });
   }
 }

@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 import dataSample from './menu.json';
+import { Food } from './food.model.js';
 
 
 @Injectable({
@@ -12,8 +11,10 @@ export class FoodService {
 
   constructor() {}
 
-  getAll(): Array<any> {
+  getAll(): Array<Food> {
+    console.log('service', 'getAll()');
     return dataSample;  
   }
+
   
 }

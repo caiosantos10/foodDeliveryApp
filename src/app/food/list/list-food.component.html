@@ -4,48 +4,61 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="container collapse navbar-collapse" id="navbarTogglerDemo01">
+    <button (click)="getAll()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="all" size="lg"></fa-icon>
+        <p>All</p>
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
 
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="all" size="lg"></fa-icon>
-      <p>All</p>
-      <span class="sr-only">(current)</span>
-    </a>
+    <button (click)="getAllPizza()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="pizza" size="lg"></fa-icon> 
+        <p>Pizza</p>
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
 
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="pizza" size="lg"></fa-icon> 
-      <p>Pizza</p>
-      <span class="sr-only">(current)</span>
-    </a>
+    <button (click)="getAllCake()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="cake" size="lg"></fa-icon> 
+        <p>Cake</p>
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
 
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="cake" size="lg"></fa-icon> 
-      <p>Cake</p>
-      <span class="sr-only">(current)</span>
-    </a>
+    <button (click)="getAllBurgers()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="hamburguer" size="lg"></fa-icon> 
+        <p>Burgers</p>
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
 
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="hamburguer" size="lg"></fa-icon> 
-      <p>Burgers</p>
-      <span class="sr-only">(current)</span>
-    </a>
+    <button (click)="getAllBeverage()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="beverage" size="lg"></fa-icon> 
+        <p>Beverage</p>
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
 
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="beverage" size="lg"></fa-icon> 
-      <p>Beverage</p>
-      <span class="sr-only">(current)</span>
-    </a>
+    <button (click)="getAllSalad()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="salad" size="lg"></fa-icon> 
+        <p>Salad</p>
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
 
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="salad" size="lg"></fa-icon> 
-      <p>Salad</p>
-      <span class="sr-only">(current)</span>
-    </a>
-
-    <a class="nav-link text-body" href="#">
-      <fa-icon [icon]="chinese" size="lg"></fa-icon>
-      <p>Chinese</p> 
-      <span class="sr-only">(current)</span>
-    </a>
+    <button (click)="getAllChinese()">
+      <a class="nav-link text-body">
+        <fa-icon [icon]="chinese" size="lg"></fa-icon>
+        <p>Chinese</p> 
+        <span class="sr-only">(current)</span>
+      </a>
+    </button>
   </div>
 </nav>
 
