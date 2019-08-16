@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import{ FoodService, Food } from '../shared';
+import { faPizzaSlice, faBirthdayCake, faHamburger, faGlassMartini, faLeaf, faDotCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +10,13 @@ import{ FoodService, Food } from '../shared';
   styleUrls: ['./list-food.component.scss']
 })
 export class ListFoodComponent implements OnInit {
+  pizza = faPizzaSlice;
+  cake = faBirthdayCake;
+  hamburguer = faHamburger;
+  beverage = faGlassMartini;
+  salad = faLeaf;
+  chinese = faDotCircle;
+  all = faBars;
 
   foods: Array<any>;
 
