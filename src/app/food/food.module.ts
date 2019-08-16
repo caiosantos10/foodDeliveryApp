@@ -6,14 +6,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { FoodService } from './shared';
 import { ListFoodComponent } from './list';
-import { AddToBagComponent } from './add';
 
 
 
 @NgModule({
   declarations: [
     ListFoodComponent,
-    AddToBagComponent
   ],
   imports: [
     CommonModule,

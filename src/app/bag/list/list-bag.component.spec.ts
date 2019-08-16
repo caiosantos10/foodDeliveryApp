@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddToBagComponent } from './add-to-bag.component';
+import { ListBagComponent } from './list-bag.component';
 
-describe('AddToBagComponent', () => {
-  let component: AddToBagComponent;
-  let fixture: ComponentFixture<AddToBagComponent>;
+describe('ListBagComponent', () => {
+  let component: ListBagComponent;
+  let fixture: ComponentFixture<ListBagComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddToBagComponent ]
+      declarations: [ ListBagComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddToBagComponent);
+    fixture = TestBed.createComponent(ListBagComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

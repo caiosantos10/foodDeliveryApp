@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FoodModule } from './food';
+import { BagModule } from './bag';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FoodModule } from './food';
     AppRoutingModule,
     FoodModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BagModule
   ],
   providers: [],
   bootstrap: [AppComponent]
