@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FoodRoutes } from './food';
+import { BagRoutes } from './bag';
 
 const routes: Routes = [
   {
@@ -9,7 +10,9 @@ const routes: Routes = [
     redirectTo:'/food/list',
     pathMatch:'full'
   },
-  ...FoodRoutes
+  ...FoodRoutes,
+  
+  ...BagRoutes
 ];
 
 @NgModule({
