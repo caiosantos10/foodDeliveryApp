@@ -11,12 +11,15 @@ import { BagService } from '../shared/bag.service';
 export class ListBagComponent implements OnInit {
 
   foods: Food[];
-
+  foodAux: Food;
+  total = 0;
+  amountAux = 0;
+  
   constructor(private bagService: BagService) { }
 
   ngOnInit() {
     this.foods = this.getAll();
-    console.log(this.foods); 
+    this.foodAux = new Food("aux", "aux", -1, -1, "aux");
   }
 
   getAll(): Food[] {
@@ -25,8 +28,27 @@ export class ListBagComponent implements OnInit {
   }
 
   updateValue(e, food:Food){
+    
     food.amount = e.target.value;
-    console.log(e.target.value);
+    
+    if(this.foodAux.title == "aux"){ //first Food of the list
+      this.total = food.price; 
+    }
+    else if (this.foodAux.title == food.title){ //current Food (food from argument)
+      if(this.amountAux > food.amount){
+        this.total -= food.price;
+      }
+      else {
+        this.total += food.price;
+      }
+    }
+    else{ //next Food
+      this.amountAux = 0;
+      this.total += food.price;
+    }
+    
+    this.amountAux = food.amount;
+    this.foodAux = food; 
   }
 
 }
