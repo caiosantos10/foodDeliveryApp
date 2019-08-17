@@ -52,8 +52,10 @@ export class ListBagComponent implements OnInit {
   }
 
   remove(id: string): void{
-    this.bagService.remove(id);
-    location.reload();
+    if(confirm("Want to delete?")){
+      this.bagService.remove(id);
+      location.reload();
+    }
   }
 
 }

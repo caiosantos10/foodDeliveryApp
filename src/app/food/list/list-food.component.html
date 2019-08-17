@@ -4,64 +4,59 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="container collapse navbar-collapse" id="navbarTogglerDemo01">
-    <button (click)="getAll()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="all" size="lg"></fa-icon>
-        <p>All</p>
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input (input)="getTitleInputValue($event)" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button (click)="getAllByTitle()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
-    <button (click)="getAllPizza()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="pizza" size="lg"></fa-icon> 
-        <p>Pizza</p>
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
+    <a (click)="getAllPizza()" class="btn text-body" role="button">
+      <fa-icon [icon]="pizza" size="lg"></fa-icon> 
+      <p>Pizza</p>
+      <span class="sr-only">(current)</span>
+    </a>
+    
 
-    <button (click)="getAllCake()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="cake" size="lg"></fa-icon> 
-        <p>Cake</p>
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
+    <a (click)="getAllCake()" class="btn text-body" role="button">
+      <fa-icon [icon]="cake" size="lg"></fa-icon> 
+      <p>Cake</p>
+      <span class="sr-only">(current)</span>
+    </a>
+    
+    <a (click)="getAllBurgers()" class="btn text-body" role="button">
+      <fa-icon [icon]="hamburguer" size="lg"></fa-icon> 
+      <p>Burgers</p>
+      <span class="sr-only">(current)</span>
+    </a>
+    
 
-    <button (click)="getAllBurgers()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="hamburguer" size="lg"></fa-icon> 
-        <p>Burgers</p>
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
-
-    <button (click)="getAllBeverage()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="beverage" size="lg"></fa-icon> 
-        <p>Beverage</p>
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
-
-    <button (click)="getAllSalad()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="salad" size="lg"></fa-icon> 
-        <p>Salad</p>
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
-
-    <button (click)="getAllChinese()">
-      <a class="nav-link text-body">
-        <fa-icon [icon]="chinese" size="lg"></fa-icon>
-        <p>Chinese</p> 
-        <span class="sr-only">(current)</span>
-      </a>
-    </button>
+    
+    <a (click)="getAllBeverage()" class="btn text-body" role="button">
+      <fa-icon [icon]="beverage" size="lg"></fa-icon> 
+      <p>Beverage</p>
+      <span class="sr-only">(current)</span>
+    </a>
+    
+    <a (click)="getAllSalad()" class="btn text-body" role="button">
+      <fa-icon [icon]="salad" size="lg"></fa-icon> 
+      <p>Salad</p>
+      <span class="sr-only">(current)</span>
+    </a>
+    
+    <a (click)="getAllChinese()" class="btn text-body" role="button">
+      <fa-icon [icon]="chinese" size="lg"></fa-icon>
+      <p>Chinese</p> 
+      <span class="sr-only">(current)</span>
+    </a>
+    
+    <a (click)="getAll()" class="btn text-body" role="button">
+      <fa-icon [icon]="all" size="lg"></fa-icon>
+      <p>All</p>
+      <span class="sr-only">(current)</span>
+    </a>
+    
   </div>
 </nav>
-
 
 <div class="container list-group">
   <div *ngFor="let food of foods">

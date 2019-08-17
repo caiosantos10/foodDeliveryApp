@@ -10,6 +10,7 @@ import { faPizzaSlice, faBirthdayCake, faHamburger, faGlassMartini, faLeaf, faDo
   styleUrls: ['./list-food.component.scss']
 })
 export class ListFoodComponent implements OnInit {
+  /**--- icons ----*/
   pizza = faPizzaSlice;
   cake = faBirthdayCake;
   hamburguer = faHamburger;
@@ -17,8 +18,10 @@ export class ListFoodComponent implements OnInit {
   salad = faLeaf;
   chinese = faDotCircle;
   all = faBars;
+  /**------------ */
 
   foods: Food[];
+  title = '';
 
   constructor(private foodService: FoodService) {}
 
@@ -34,6 +37,25 @@ export class ListFoodComponent implements OnInit {
   getAll(): void {
     this.foods = [];
     this.foods = this.foodService.getAll();
+  }
+
+  getTitleInputValue(e) {
+    this.title = e.target.value;
+  }
+
+  getAllByTitle(): void{
+    if(this.title == ''){
+      this.getAll();
+    } 
+    else
+    {
+      this.foods = [];
+      this.foodService.getAll().forEach(element => {
+      if(element.title == this.title){
+        this.foods.push(element);
+        }
+      });
+    }
   }
 
   getAllPizza(): void {

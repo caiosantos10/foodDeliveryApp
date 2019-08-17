@@ -12,7 +12,7 @@ export class FoodService {
   constructor() {}
 
   getAll(): Array<Food> {
-    console.log('service', 'getAll()');
+    //console.log('service', 'getAll()');
     return dataSample;  
   }
 
