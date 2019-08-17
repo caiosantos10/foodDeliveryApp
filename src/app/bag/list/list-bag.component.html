@@ -33,7 +33,13 @@
 
   </div>
   <div class="container fixed-bottom">
-    <button (click)="checkOutClick()" type="button" class="btn btn-success btn-lg float-lg-right">Proceed to checkout</button>
+    <button (click)="openModal('modal')" type="button" class="btn btn-success btn-lg float-lg-right">Proceed to checkout</button>
   </div>
+
+  <jw-modal id="modal">
+    <h1>A Custom Modal!</h1>
+    <p>Home page text: <input type="text" /></p>
+    <button (click)="closeModal('modal');">Close</button>
+  </jw-modal>
   
 

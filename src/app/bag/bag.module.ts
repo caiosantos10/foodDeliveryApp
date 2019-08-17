@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { ModalModule } from '../_modal/modal.module';
+
 import { BagService } from './shared';
 import { ListBagComponent } from './list';
 
@@ -15,7 +17,8 @@ import { ListBagComponent } from './list';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ModalModule
   ],
   providers: [
     BagService

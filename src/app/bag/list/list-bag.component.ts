@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Food } from '../../food/shared/food.model';
 import { BagService } from '../shared/bag.service';
 import { componentFactoryName } from '@angular/compiler';
+import { ModalService } from 'src/app/_modal';
 
 @Component({
   selector: 'app-list-bag',
@@ -17,7 +18,7 @@ export class ListBagComponent implements OnInit {
   amountAux = 0;
   previously = [];
   
-  constructor(private bagService: BagService) { }
+  constructor(private bagService: BagService, private modalService: ModalService) { }
 
   ngOnInit() {
     this.foods = this.getAll();
@@ -88,8 +89,12 @@ export class ListBagComponent implements OnInit {
     return truncatedNum/multiplier;
   }
 
-  checkOutClick(): void {
-    localStorage['bag'] = JSON.stringify(this.foods);
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+      this.modalService.close(id);
   }
 
 }

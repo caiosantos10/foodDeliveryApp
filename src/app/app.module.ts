@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FoodModule } from './food';
 import { BagModule } from './bag';
+import { ModalModule } from './_modal';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BagModule } from './bag';
     FoodModule,
     HttpClientModule,
     FontAwesomeModule,
-    BagModule
+    BagModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
