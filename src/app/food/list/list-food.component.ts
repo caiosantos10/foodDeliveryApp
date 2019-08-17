@@ -51,7 +51,7 @@ export class ListFoodComponent implements OnInit {
     {
       this.foods = [];
       this.foodService.getAll().forEach(element => {
-      if(element.title == this.title){
+      if(element.title.includes(this.title)){
         this.foods.push(element);
         }
       });
