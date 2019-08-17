@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Food } from '../../food/shared/food.model';
 import { BagService } from '../shared/bag.service';
+import { componentFactoryName } from '@angular/compiler';
 
 @Component({
   selector: 'app-list-bag',
@@ -23,7 +24,6 @@ export class ListBagComponent implements OnInit {
   }
 
   getAll(): Food[] {
-    //console.log('bag-component', this.bagService.getAll());
     return this.bagService.getAll();
   }
 
@@ -46,9 +46,14 @@ export class ListBagComponent implements OnInit {
       this.amountAux = 0;
       this.total += food.price;
     }
-    
+
     this.amountAux = food.amount;
     this.foodAux = food; 
+  }
+
+  remove(id: string): void{
+    this.bagService.remove(id);
+    location.reload();
   }
 
 }

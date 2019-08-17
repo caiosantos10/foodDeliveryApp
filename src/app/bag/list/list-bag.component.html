@@ -4,7 +4,7 @@
   </button>
   <div class="container collapse navbar-collapse font-weight-bold" id="navbarTogglerDemo01">
     <a [routerLink]="['/bag/list']" class="navbar-brand">My Bag</a>
-    <a class="navbar-brand">Total price = {{ total }} </a>
+    <a class="navbar-brand">Total price: $ {{ total }} </a>
   </div>
 </nav>
 
@@ -13,7 +13,7 @@
         <a class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ food.title }}</h5>
-            <button type="button" class="btn btn-danger">Remove</button>
+            <button (click)="remove(food.id)" type="button" class="btn btn-danger">Remove</button>
         </div>
         <div class="row">
             <div class="col-1">
