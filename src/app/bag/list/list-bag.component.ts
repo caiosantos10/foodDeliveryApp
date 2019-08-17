@@ -15,6 +15,7 @@ export class ListBagComponent implements OnInit {
   foodAux: Food;
   total = 0;
   amountAux = 0;
+  previously = [];
   
   constructor(private bagService: BagService) { }
 
@@ -29,26 +30,47 @@ export class ListBagComponent implements OnInit {
 
   updateValue(e, food:Food){
     
-    food.amount = e.target.value;
+    //food.amount = e.target.value;
     
     if(this.foodAux.title == "aux"){ //first Food of the list
+      food.amount = e.target.value;
       this.total = food.price; 
+      
     }
     else if (this.foodAux.title == food.title){ //current Food (food from argument)
+      food.amount = e.target.value;
       if(this.amountAux > food.amount){
         this.total -= food.price;
+        
       }
       else {
         this.total += food.price;
+       
       }
     }
-    else{ //next Food
-      this.amountAux = 0;
-      this.total += food.price;
+    else{ //next or previously Food 
+      if (this.previously.includes(food.title)){
+        console.log("visited");
+        if(e.target.value < food.amount){
+          this.total -= food.price;
+          food.amount--;
+        }
+        else{
+          this.total += food.price;
+          food.amount++; 
+        }
+      }
+      else{
+        food.amount = e.target.value;
+        this.amountAux = 0;
+        this.total += food.price;
+    }
+      
     }
 
     this.amountAux = food.amount;
-    this.foodAux = food; 
+    this.foodAux = food;
+    this.previously.push(food.title); 
   }
 
   remove(id: string): void{
@@ -57,5 +79,13 @@ export class ListBagComponent implements OnInit {
       location.reload();
     }
   }
+
+  truncate(number, digits): number {
+    var multiplier = Math.pow(10, digits),
+        adjustedNum = number * multiplier,
+        truncatedNum = Math[adjustedNum < 0 ? 'ceil' : 'floor'](adjustedNum);
+
+    return truncatedNum/multiplier;
+};
 
 }
