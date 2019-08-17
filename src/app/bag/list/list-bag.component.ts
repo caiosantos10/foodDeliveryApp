@@ -86,6 +86,10 @@ export class ListBagComponent implements OnInit {
         truncatedNum = Math[adjustedNum < 0 ? 'ceil' : 'floor'](adjustedNum);
 
     return truncatedNum/multiplier;
-};
+  }
+
+  checkOutClick(): void {
+    localStorage['bag'] = JSON.stringify(this.foods);
+  }
 
 }
