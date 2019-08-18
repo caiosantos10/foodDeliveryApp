@@ -1,11 +1,12 @@
 ﻿import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
 
 import { ModalService } from './modal.service';
+import { Food } from '../food';
 
 @Component({ 
     selector: 'jw-modal', 
     templateUrl: 'modal.component.html', 
-    styleUrls: ['modal.component.scss'],
+    styleUrls: ['modal.component.less'],
     encapsulation: ViewEncapsulation.None
 })
 export class ModalComponent implements OnInit, OnDestroy {

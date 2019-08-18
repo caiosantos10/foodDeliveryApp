@@ -90,11 +90,17 @@ export class ListBagComponent implements OnInit {
   }
 
   openModal(id: string) {
+    console.log(this.foods);
     this.modalService.open(id);
   }
 
   closeModal(id: string) {
       this.modalService.close(id);
+  }
+
+  confirm(id: string): void {
+    alert("Success!");
+    this.closeModal(id);
   }
 
 }
