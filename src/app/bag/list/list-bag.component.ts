@@ -4,6 +4,7 @@ import { Food } from '../../food/shared/food.model';
 import { BagService } from '../shared/bag.service';
 import { componentFactoryName } from '@angular/compiler';
 import { ModalService } from 'src/app/_modal';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-list-bag',
@@ -100,7 +101,9 @@ export class ListBagComponent implements OnInit {
 
   confirm(id: string): void {
     alert("Success!");
+    localStorage.clear();
     this.closeModal(id);
+    
   }
 
 }
