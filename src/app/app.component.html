@@ -1,18 +1,15 @@
-<div >   
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand font-weight-bold" href="/food">{{ title }}</a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">    
-        <a class="text-dark font-weight-bold nav-link" href="/food">Home <span class="sr-only">(current)</span></a>    
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a [routerLink]="['/bag/list']" class="nav-link font-weight-bold">My bag <fa-icon [icon]="bag" size="lg"></fa-icon></a>
-            </li>
-        </ul>
+<div>   
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container d-flex">
+      <div class="p-2 d-none d-lg-block">
+        <a class="navbar-brand font-weight-bold" href="/food">{{ title }}</a>
+      </div>
+      <div class="p-2">    
+          <a class="text-dark font-weight-bold nav-link" href="/food">Home <span class="sr-only">(current)</span></a>    
+      </div>
+      <div class="ml-auto p-2">
+          <a [routerLink]="['/bag/list']" class="text-dark font-weight-bold nav-link">My bag <fa-icon [icon]="bag" size="lg"></fa-icon></a>
+      </div>
     </div>
   </nav>
   <router-outlet></router-outlet>
