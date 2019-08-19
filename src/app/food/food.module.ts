@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { FoodService } from './shared';
 import { ListFoodComponent } from './list';
@@ -17,7 +18,8 @@ import { ListFoodComponent } from './list';
     CommonModule,
     RouterModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
     
   ],
   providers: [

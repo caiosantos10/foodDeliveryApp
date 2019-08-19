@@ -10,6 +10,9 @@ import { faPizzaSlice, faBirthdayCake, faHamburger, faGlassMartini, faLeaf, faDo
   styleUrls: ['./list-food.component.scss']
 })
 export class ListFoodComponent implements OnInit {
+  /**--- Collapse -- */
+  public isCollapsed = true;
+
   /**--- icons ----*/
   pizza = faPizzaSlice;
   cake = faBirthdayCake;

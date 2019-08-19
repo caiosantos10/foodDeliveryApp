@@ -1,57 +1,75 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container collapse navbar-collapse" id="navbarTogglerDemo01">
-    
+  <div class="container">
+    <button class="navbar-toggler" type="button" 
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" 
+      aria-controls="collapseExample">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div  class="collapse navbar-collapse" id="collapseExample" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a (click)="getAllPizza()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="pizza" size="lg"></fa-icon> 
+            <p>Pizza</p>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a (click)="getAllCake()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="cake" size="lg"></fa-icon> 
+            <p>Cake</p>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>  
+        
+        <li class="nav-item active">
+          <a (click)="getAllBurgers()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="hamburguer" size="lg"></fa-icon> 
+            <p>Burgers</p>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a (click)="getAllBeverage()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="beverage" size="lg"></fa-icon> 
+            <p>Beverage</p>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li> 
+        <li class="nav-item active"> 
+          <a (click)="getAllSalad()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="salad" size="lg"></fa-icon> 
+            <p>Salad</p>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>  
+        
+        <li class="nav-item active">
+          <a (click)="getAllChinese()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="chinese" size="lg"></fa-icon>
+            <p>Chinese</p> 
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a (click)="getAll()" class="btn text-body nav-link" role="button">
+            <fa-icon [icon]="all" size="lg"></fa-icon>
+            <p>All</p>
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+           
+    </div>
     <form class="form-inline my-2 my-lg-0">
       <input (input)="getTitleInputValue($event)" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button (click)="getAllByTitle()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-    <a (click)="getAllPizza()" class="btn text-body" role="button">
-      <fa-icon [icon]="pizza" size="lg"></fa-icon> 
-      <p>Pizza</p>
-      <span class="sr-only">(current)</span>
-    </a>
-    
-
-    <a (click)="getAllCake()" class="btn text-body" role="button">
-      <fa-icon [icon]="cake" size="lg"></fa-icon> 
-      <p>Cake</p>
-      <span class="sr-only">(current)</span>
-    </a>
-    
-    <a (click)="getAllBurgers()" class="btn text-body" role="button">
-      <fa-icon [icon]="hamburguer" size="lg"></fa-icon> 
-      <p>Burgers</p>
-      <span class="sr-only">(current)</span>
-    </a>
-    
-
-    
-    <a (click)="getAllBeverage()" class="btn text-body" role="button">
-      <fa-icon [icon]="beverage" size="lg"></fa-icon> 
-      <p>Beverage</p>
-      <span class="sr-only">(current)</span>
-    </a>
-    
-    <a (click)="getAllSalad()" class="btn text-body" role="button">
-      <fa-icon [icon]="salad" size="lg"></fa-icon> 
-      <p>Salad</p>
-      <span class="sr-only">(current)</span>
-    </a>
-    
-    <a (click)="getAllChinese()" class="btn text-body" role="button">
-      <fa-icon [icon]="chinese" size="lg"></fa-icon>
-      <p>Chinese</p> 
-      <span class="sr-only">(current)</span>
-    </a>
-    
-    <a (click)="getAll()" class="btn text-body" role="button">
-      <fa-icon [icon]="all" size="lg"></fa-icon>
-      <p>All</p>
-      <span class="sr-only">(current)</span>
-    </a>
-    
-  </div>
+    </form> 
+  </div>  
 </nav>
 
 <div class="container list-group">
