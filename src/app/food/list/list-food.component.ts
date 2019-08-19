@@ -35,6 +35,7 @@ export class ListFoodComponent implements OnInit {
 
   addToBag(food: Food): void {
     this.foodService.addToBag(food);
+    alert("Added to bag");
   }
 
   getAll(): void {
