@@ -39,7 +39,8 @@
   </div>
 
   </div>
-  <div class="container fixed-bottom">
+  <br>
+  <div class="container">
     <button (click)="openModal('modal')" type="button" class="btn btn-success btn-lg float-lg-right">Proceed to checkout</button>
   </div>
 
@@ -65,11 +66,11 @@
         </li>
     </ul>
     <br>
-    <div class="row justify-content-between">
-      <div class="col-11">
+    <div class="d-flex bd-highlight mb-3">
+      <div class="p-2 bd-highlight">
         <button (click)="closeModal('modal')" type="button" class="btn btn-danger">Cancel</button>
       </div>
-      <div class="col-1">
+      <div class="ml-auto p-2 bd-highlight">
         <a (click)="confirm('modal')" role="button" href="#" class="btn btn-success">Confirm</a>
       </div>
     </div>  

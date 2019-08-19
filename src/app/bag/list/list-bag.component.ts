@@ -16,11 +16,8 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 export class ListBagComponent implements OnInit {
 
   foods: Food[];
-  foodAux: Food;
-  total = 0;
   
-  plus = faPlus;
-  minus = faMinus
+  total = 0;
   
   constructor(private bagService: BagService, private modalService: ModalService) { }
 
@@ -28,8 +25,8 @@ export class ListBagComponent implements OnInit {
     this.foods = this.getAll();
     this.foods.forEach(food =>{
       food.amount = 0;
-    })
-    this.foodAux = new Food("aux", "aux", -1, -1, "aux");
+    });
+    
   }
 
   plusClick(food: Food): void {
@@ -38,59 +35,17 @@ export class ListBagComponent implements OnInit {
   }
 
   minusClick(food: Food): void {
-    food.amount --;
-    this.total -= food.price;
+    if(food.amount == 0){
+
+    } else {
+      food.amount --;
+      this.total -= food.price;
+    }
   }
 
   getAll(): Food[] {
     return this.bagService.getAll();
   }
-
-/*
-  updateValue(e, food:Food){
-    //food.amount = e.target.value;
-    
-    if(this.foodAux.title == "aux"){ //first Food of the list
-      food.amount = e.target.value;
-      this.total = food.price; 
-      
-    }
-    else if (this.foodAux.title == food.title){ //current Food (food from argument)
-      food.amount = e.target.value;
-      if(this.amountAux > food.amount){
-        this.total -= food.price;
-        
-      }
-      else {
-        this.total += food.price;
-       
-      }
-    }
-    else{ //next or previously Food 
-      if (this.previously.includes(food.title)){
-        console.log("visited");
-        if(e.target.value < food.amount){
-          this.total -= food.price;
-          food.amount--;
-        }
-        else{
-          this.total += food.price;
-          food.amount++; 
-        }
-      }
-      else{
-        food.amount = e.target.value;
-        this.amountAux = 0;
-        this.total += food.price;
-    }
-      
-    }
-
-    this.amountAux = food.amount;
-    this.foodAux = food;
-    this.previously.push(food.title); 
-  }
-*/
 
   remove(id: string): void{
     if(confirm("Want to delete?")){
