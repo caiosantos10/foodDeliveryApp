@@ -5,6 +5,8 @@ import { BagService } from '../shared/bag.service';
 import { componentFactoryName } from '@angular/compiler';
 import { ModalService } from 'src/app/_modal';
 import { RouterLinkWithHref } from '@angular/router';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-list-bag',
@@ -16,22 +18,36 @@ export class ListBagComponent implements OnInit {
   foods: Food[];
   foodAux: Food;
   total = 0;
-  amountAux = 0;
-  previously = [];
+  
+  plus = faPlus;
+  minus = faMinus
   
   constructor(private bagService: BagService, private modalService: ModalService) { }
 
   ngOnInit() {
     this.foods = this.getAll();
+    this.foods.forEach(food =>{
+      food.amount = 0;
+    })
     this.foodAux = new Food("aux", "aux", -1, -1, "aux");
+  }
+
+  plusClick(food: Food): void {
+    food.amount ++;
+    this.total += food.price;
+  }
+
+  minusClick(food: Food): void {
+    food.amount --;
+    this.total -= food.price;
   }
 
   getAll(): Food[] {
     return this.bagService.getAll();
   }
 
+/*
   updateValue(e, food:Food){
-    console.log("Entrou no metodod")
     //food.amount = e.target.value;
     
     if(this.foodAux.title == "aux"){ //first Food of the list
@@ -74,6 +90,7 @@ export class ListBagComponent implements OnInit {
     this.foodAux = food;
     this.previously.push(food.title); 
   }
+*/
 
   remove(id: string): void{
     if(confirm("Want to delete?")){

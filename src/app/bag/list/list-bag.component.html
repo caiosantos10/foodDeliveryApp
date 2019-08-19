@@ -22,12 +22,18 @@
           <h6 class="mb-1">Amount:</h6>
         </div>
         <div class="p-2  bd-highlight">
-          <input (input)="updateValue($event, food)" style="width:80px"type="number" min="0" class="form-control" id="basic-url"
+          <button (click)="minusClick(food)" type="button" class="btn btn-danger">-</button>
+        </div>
+        <div class="p-2  bd-highlight">
+          <input disabled [value]="food.amount" style="width:80px"type="number" min="0" class="form-control" id="basic-url"
             aria-describedby="basic-addon3">
         </div>
+        <div class="p-2  bd-highlight">
+            <button (click)="plusClick(food)" type="button" class="btn btn-primary">+</button>
+          </div>
       </div>
 
-      <p class="mb-1">Price: $ {{ truncate(food.amount * food.price, 2) }} </p>
+      <p class="mb-1">Price: $ {{ food.price }} </p>
       <small>Cuisine: {{ food.cuisine }}</small>
     </a>
   </div>
