@@ -31,7 +31,7 @@ export class ListBagComponent implements OnInit {
   }
 
   updateValue(e, food:Food){
-    
+    console.log("Entrou no metodod")
     //food.amount = e.target.value;
     
     if(this.foodAux.title == "aux"){ //first Food of the list
