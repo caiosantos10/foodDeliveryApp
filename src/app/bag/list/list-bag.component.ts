@@ -63,7 +63,6 @@ export class ListBagComponent implements OnInit {
   }
 
   openModal(id: string) {
-    console.log(this.foods);
     this.modalService.open(id);
   }
 

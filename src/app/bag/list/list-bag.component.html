@@ -37,11 +37,12 @@
       <small>Cuisine: {{ food.cuisine }}</small>
     </a>
   </div>
-
-  </div>
-  <br>
-  <div class="container">
-    <button (click)="openModal('modal')" type="button" class="btn btn-success btn-lg float-lg-right">Proceed to checkout</button>
+    <br>
+    <div class="d-flex flex-row-reverse bd-highlight">
+      <div class="p-2 bd-highlight">
+        <button (click)="openModal('modal')" type="button" class="btn btn-success btn-lg float-lg-right">Proceed to checkout</button>
+      </div>
+    </div>
   </div>
 
   <jw-modal id="modal" class="container">

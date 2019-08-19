@@ -6,7 +6,7 @@ import { Food } from '../food';
 @Component({ 
     selector: 'jw-modal', 
     templateUrl: 'modal.component.html', 
-    styleUrls: ['modal.component.less'],
+    styleUrls: ['modal.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class ModalComponent implements OnInit, OnDestroy {
